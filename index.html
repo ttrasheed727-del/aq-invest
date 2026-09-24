@@ -2,213 +2,322 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>AQ INVEST</title>
 
 <style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
+*{box-sizing:border-box;margin:0;padding:0}
 body{
   font-family:Arial,sans-serif;
   background:#06101d;
-  color:white;
+  color:#fff;
   min-height:100vh;
 }
-
 header{
   background:#09192b;
   border-bottom:2px solid #d6ad35;
-  padding:16px;
+  padding:22px 28px 28px;
 }
-
 .logo{
-  font-size:25px;
-  font-weight:800;
   color:#ffd447;
+  font-size:34px;
+  font-weight:800;
+  letter-spacing:.5px;
 }
-
 .subtitle{
-  color:#9fb3c8;
-  font-size:12px;
-  margin-top:3px;
+  color:#929bab;
+  font-size:18px;
+  margin-top:5px;
 }
-
 .languages{
   display:flex;
-  gap:7px;
-  margin-top:14px;
+  gap:12px;
+  margin-top:26px;
+  flex-wrap:wrap;
 }
-
-.languages button{
-  border:1px solid #35506d;
-  background:#10243a;
-  color:white;
-  padding:8px 12px;
-  border-radius:7px;
+.lang{
+  border:1px solid #35506c;
+  background:#102943;
+  color:#fff;
+  border-radius:11px;
+  padding:15px 20px;
+  font-size:17px;
+  cursor:pointer;
 }
+.lang.active{border-color:#ffd447}
 
+main{
+  padding:25px;
+  max-width:760px;
+  margin:auto;
+}
 .rates{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:10px;
-  padding:14px;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
 }
-
-.rate{
-  background:#0d2138;
-  border:1px solid #24415f;
-  border-radius:10px;
-  padding:12px;
+.rate-card{
+  background:#102943;
+  border:1px solid #2c4967;
+  border-radius:14px;
+  padding:21px;
+  min-height:110px;
 }
-
-.rate strong{
+.rate-name{
+  font-size:22px;
+  margin-bottom:5px;
+}
+.rate-value{
   color:#ffd447;
+  font-size:23px;
+  font-weight:700;
+}
+.rate-status{
+  font-size:11px;
+  color:#8fa0b2;
+  margin-top:7px;
 }
 
-.main{
-  padding:14px;
-}
-
-.title-row{
+.section-head{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  margin-bottom:14px;
+  gap:15px;
+  margin-top:48px;
+  margin-bottom:24px;
 }
-
+.section-head h2{
+  font-size:31px;
+}
 .add{
   background:#ffd447;
-  color:#111;
+  color:#202020;
   border:0;
-  padding:10px 15px;
-  border-radius:8px;
-  font-weight:bold;
+  border-radius:13px;
+  padding:17px 23px;
+  font-size:17px;
+  font-weight:700;
+  cursor:pointer;
 }
 
-.card{
-  background:#0b1c30;
-  border:1px solid #294866;
-  border-radius:12px;
-  padding:14px;
-  margin-bottom:12px;
+.investor{
+  background:#0c2239;
+  border:1px solid #31506e;
+  border-radius:18px;
+  padding:25px;
+  margin-bottom:22px;
 }
-
-.profile{
+.person{
   display:flex;
   align-items:center;
-  gap:12px;
+  gap:18px;
 }
-
-.photo{
-  width:55px;
-  height:55px;
+.avatar{
+  width:80px;
+  height:80px;
   border-radius:50%;
-  background:#d8e0e8;
+  background:#dce6ef;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:28px;
+  font-size:51px;
+  flex:0 0 auto;
 }
-
-.online{
-  width:10px;
-  height:10px;
-  background:#28d56f;
-  border-radius:50%;
-  display:inline-block;
-  margin-left:5px;
+.person h3{
+  font-size:25px;
 }
-
-.name{
-  font-size:18px;
-  font-weight:bold;
-}
-
 .phone{
-  color:#9eb0c2;
-  font-size:13px;
-  margin-top:3px;
+  color:#9aa6b5;
+  margin-top:6px;
+  font-size:17px;
+}
+.online{
+  display:inline-block;
+  width:15px;
+  height:15px;
+  background:#20d66b;
+  border-radius:50%;
+  margin-left:7px;
+}
+.rank{
+  margin-left:auto;
+  background:#ffd447;
+  color:#111;
+  border-radius:20px;
+  padding:6px 10px;
+  font-weight:bold;
+  font-size:12px;
 }
 
 .stats{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:8px;
-  margin-top:14px;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin-top:23px;
 }
-
 .stat{
-  background:#102943;
-  padding:10px;
-  border-radius:8px;
+  background:#11304d;
+  border-radius:12px;
+  padding:17px;
 }
-
 .label{
-  color:#8fa5ba;
-  font-size:11px;
+  color:#92a1b0;
+  font-size:14px;
 }
-
 .value{
-  font-weight:bold;
-  margin-top:4px;
+  font-size:22px;
+  font-weight:700;
+  margin-top:6px;
 }
 
 .profit{
-  color:#3ee481;
+  margin-top:16px;
+  background:#063f32;
+  border:1px solid #15835f;
+  border-radius:13px;
+  padding:17px;
 }
-
-.conversion{
-  margin-top:10px;
-  background:#082f25;
-  border:1px solid #15744e;
-  border-radius:8px;
-  padding:10px;
+.profit-title{
+  color:#8fd6b6;
+  font-size:14px;
 }
-
-.conversion-title{
-  color:#8ddfb6;
-  font-size:11px;
-}
-
 .final-profit{
-  color:#40e88a;
-  font-size:20px;
-  font-weight:bold;
-  margin:5px 0;
+  color:#2ee17d;
+  font-size:27px;
+  font-weight:800;
+  margin:10px 0;
 }
-
 .currency-row{
   display:flex;
   flex-wrap:wrap;
-  gap:7px;
-  font-size:12px;
+  gap:10px;
+  font-size:15px;
 }
 
 .actions{
-  display:flex;
-  gap:8px;
-  margin-top:12px;
+  margin-top:17px;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:10px;
+}
+.view{
+  width:100%;
+  border:0;
+  background:#1767f4;
+  color:#fff;
+  border-radius:10px;
+  padding:16px;
+  font-size:18px;
+  font-weight:700;
+  cursor:pointer;
 }
 
-.view{
-  flex:1;
-  background:#1768ff;
-  color:white;
-  border:0;
-  padding:10px;
-  border-radius:7px;
-  font-weight:bold;
+.details{
+  display:none;
+  background:#09192b;
+  border:1px solid #2d4965;
+  border-radius:12px;
+  margin-top:14px;
+  padding:17px;
 }
+.details.show{display:block}
+.detail-row{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  border-bottom:1px solid #1d3851;
+  padding:10px 0;
+}
+.detail-row:last-child{border-bottom:0}
+
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.76);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+  z-index:1000;
+}
+.modal.show{display:flex}
+.modal-box{
+  width:100%;
+  max-width:480px;
+  max-height:90vh;
+  overflow:auto;
+  background:#0c2239;
+  border:1px solid #385572;
+  border-radius:17px;
+  padding:22px;
+}
+.modal-box h2{
+  color:#ffd447;
+  margin-bottom:18px;
+}
+.field{margin-bottom:14px}
+.field label{
+  display:block;
+  color:#a7b1bd;
+  font-size:13px;
+  margin-bottom:6px;
+}
+.field input,.field select{
+  width:100%;
+  padding:13px;
+  border-radius:9px;
+  border:1px solid #385572;
+  background:#071625;
+  color:#fff;
+  font-size:16px;
+}
+.modal-buttons{
+  display:flex;
+  gap:10px;
+  margin-top:20px;
+}
+.save,.cancel,.delete-btn,.withdraw-btn{
+  border:0;
+  border-radius:9px;
+  padding:13px;
+  font-size:15px;
+  font-weight:bold;
+  cursor:pointer;
+}
+.save{background:#ffd447;color:#111;flex:1}
+.cancel{background:#32465a;color:#fff;flex:1}
+.withdraw-btn{background:#14845c;color:white;width:100%;margin-top:10px}
+.delete-btn{background:#8e2830;color:#fff;width:100%;margin-top:10px}
+
+.toast{
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#fff;
+  color:#111;
+  padding:11px 17px;
+  border-radius:9px;
+  display:none;
+  z-index:2000;
+}
+.toast.show{display:block}
 
 footer{
   text-align:center;
-  color:#66829d;
-  padding:25px 10px;
-  font-size:12px;
+  color:#768494;
+  padding:30px 15px;
+}
+
+@media(max-width:520px){
+  header{padding:25px 28px}
+  main{padding:25px}
+  .logo{font-size:33px}
+  .languages{gap:11px}
+  .lang{padding:14px 17px}
+  .rates{gap:16px}
+  .rate-card{padding:20px}
+  .section-head h2{font-size:30px}
 }
 </style>
 </head>
@@ -217,119 +326,502 @@ footer{
 
 <header>
   <div class="logo">AQ INVEST</div>
-  <div class="subtitle">Investment Tracker</div>
+  <div class="subtitle" id="subtitle">Investment Tracker</div>
 
   <div class="languages">
-    <button>🇬🇧 English</button>
-    <button>🇸🇦 العربية</button>
-    <button>മലയാളം</button>
+    <button class="lang active" data-lang="en">🇬🇧 English</button>
+    <button class="lang" data-lang="ar">🇸🇦 العربية</button>
+    <button class="lang" data-lang="ml">മലയാളം</button>
   </div>
 </header>
 
+<main>
+
 <section class="rates">
-
-  <div class="rate">
-    🇮🇳 INR<br>
-    <strong>₹1.00</strong>
+  <div class="rate-card">
+    <div class="rate-name">🇮🇳 INR</div>
+    <div class="rate-value">₹1.00</div>
   </div>
 
-  <div class="rate">
-    🇸🇦 SAR<br>
-    <strong>Live Rate</strong>
+  <div class="rate-card">
+    <div class="rate-name">🇸🇦 SAR</div>
+    <div class="rate-value" id="sarRate">Loading...</div>
+    <div class="rate-status" id="sarStatus"></div>
   </div>
 
-  <div class="rate">
-    🇦🇪 AED<br>
-    <strong>Live Rate</strong>
+  <div class="rate-card">
+    <div class="rate-name">🇦🇪 AED</div>
+    <div class="rate-value" id="aedRate">Loading...</div>
+    <div class="rate-status" id="aedStatus"></div>
   </div>
 
-  <div class="rate">
-    💎 USDT<br>
-    <strong>Live Rate</strong>
+  <div class="rate-card">
+    <div class="rate-name">💎 USDT</div>
+    <div class="rate-value" id="usdtRate">Loading...</div>
+    <div class="rate-status" id="usdtStatus"></div>
   </div>
-
 </section>
 
-<main class="main">
+<div class="section-head">
+  <h2 id="investorsTitle">Investors</h2>
+  <button class="add" id="addBtn">＋ Add New</button>
+</div>
 
-  <div class="title-row">
-    <h2>Investors</h2>
-    <button class="add">＋ Add New</button>
-  </div>
-
-  <div class="card">
-
-    <div class="profile">
-
-      <div class="photo">👤</div>
-
-      <div>
-        <div class="name">
-          Rasheed
-          <span class="online"></span>
-        </div>
-
-        <div class="phone">
-          +966 50 123 4567
-        </div>
-      </div>
-
-    </div>
-
-    <div class="stats">
-
-      <div class="stat">
-        <div class="label">Invested</div>
-        <div class="value">₹10,000</div>
-      </div>
-
-      <div class="stat">
-        <div class="label">Daily %</div>
-        <div class="value">4%</div>
-      </div>
-
-      <div class="stat">
-        <div class="label">Current Total</div>
-        <div class="value">₹21,066.26</div>
-      </div>
-
-      <div class="stat">
-        <div class="label">Total Withdrawn</div>
-        <div class="value">₹0.00</div>
-      </div>
-
-    </div>
-
-    <div class="conversion">
-
-      <div class="conversion-title">
-        Final Profit • Live Currency Conversion
-      </div>
-
-      <div class="final-profit">
-        ₹11,066.26
-      </div>
-
-      <div class="currency-row">
-        <span>🇮🇳 ₹11,066.26</span>
-        <span>🇸🇦 SAR —</span>
-        <span>🇦🇪 AED —</span>
-        <span>💎 USDT —</span>
-      </div>
-
-    </div>
-
-    <div class="actions">
-      <button class="view">👁 View</button>
-    </div>
-
-  </div>
+<div id="investorList"></div>
 
 </main>
 
-<footer>
-AQ INVEST • Investment Tracker
-</footer>
+<footer>AQ INVEST • Investment Tracker</footer>
+
+<div class="modal" id="investorModal">
+  <div class="modal-box">
+    <h2 id="modalTitle">Add Investor</h2>
+
+    <div class="field">
+      <label>Name</label>
+      <input id="nameInput" placeholder="Investor name">
+    </div>
+
+    <div class="field">
+      <label>Phone</label>
+      <input id="phoneInput" placeholder="+966 ...">
+    </div>
+
+    <div class="field">
+      <label>Currency</label>
+      <select id="currencyInput">
+        <option value="INR">🇮🇳 INR</option>
+        <option value="SAR">🇸🇦 SAR</option>
+        <option value="AED">🇦🇪 AED</option>
+        <option value="USDT">💎 USDT</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label>Invested Amount</label>
+      <input id="amountInput" type="number" step="0.01" min="0">
+    </div>
+
+    <div class="field">
+      <label>Daily Profit %</label>
+      <input id="percentInput" type="number" step="0.01" min="0">
+    </div>
+
+    <div class="field">
+      <label>Current Total</label>
+      <input id="totalInput" type="number" step="0.01" min="0">
+    </div>
+
+    <div class="field">
+      <label>Total Withdrawn</label>
+      <input id="withdrawnInput" type="number" step="0.01" min="0" value="0">
+    </div>
+
+    <div class="modal-buttons">
+      <button class="cancel" id="cancelBtn">Cancel</button>
+      <button class="save" id="saveBtn">Save</button>
+    </div>
+
+    <button class="withdraw-btn" id="withdrawBtn" style="display:none">
+      Add Withdrawal
+    </button>
+
+    <button class="delete-btn" id="deleteBtn" style="display:none">
+      Delete Investor
+    </button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const STORAGE_KEY = "aq_invest_data_v2";
+
+const defaultInvestors = [{
+  id: Date.now(),
+  name: "Rasheed",
+  phone: "+966 50 123 4567",
+  currency: "INR",
+  invested: 10000,
+  percent: 4,
+  total: 21066.26,
+  withdrawn: 0
+}];
+
+let investors;
+try{
+  investors = JSON.parse(localStorage.getItem(STORAGE_KEY)) || defaultInvestors;
+}catch(e){
+  investors = defaultInvestors;
+}
+
+let rates = {
+  INR:1,
+  SAR:null,
+  AED:null,
+  USDT:null
+};
+
+let editingId = null;
+
+const list = document.getElementById("investorList");
+const modal = document.getElementById("investorModal");
+
+function saveData(){
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(investors));
+}
+
+function money(n){
+  return Number(n || 0).toLocaleString(undefined,{
+    minimumFractionDigits:2,
+    maximumFractionDigits:2
+  });
+}
+
+function symbol(currency){
+  if(currency==="INR") return "₹";
+  if(currency==="SAR") return "SAR ";
+  if(currency==="AED") return "AED ";
+  return "USDT ";
+}
+
+function toINR(amount,currency){
+  if(currency==="INR") return Number(amount);
+  if(!rates[currency]) return null;
+  return Number(amount) * rates[currency];
+}
+
+function fromINR(inr,currency){
+  if(currency==="INR") return Number(inr);
+  if(!rates[currency]) return null;
+  return Number(inr) / rates[currency];
+}
+
+function profitINR(inv){
+  const investedINR = toINR(inv.invested,inv.currency);
+  const totalINR = toINR(inv.total,inv.currency);
+  const withdrawnINR = toINR(inv.withdrawn,inv.currency);
+
+  if(investedINR===null || totalINR===null || withdrawnINR===null){
+    return null;
+  }
+  return totalINR + withdrawnINR - investedINR;
+}
+
+function rateText(currency){
+  const r=rates[currency];
+  if(!r) return "—";
+  return money(r);
+}
+
+function render(){
+  const sorted=[...investors].sort((a,b)=>{
+    const av=toINR(a.total,a.currency) ?? 0;
+    const bv=toINR(b.total,b.currency) ?? 0;
+    return bv-av;
+  });
+
+  list.innerHTML="";
+
+  sorted.forEach((inv,index)=>{
+    const p=profitINR(inv);
+
+    const sar = p===null ? "—" : fromINR(p,"SAR");
+    const aed = p===null ? "—" : fromINR(p,"AED");
+    const usdt = p===null ? "—" : fromINR(p,"USDT");
+
+    const card=document.createElement("div");
+    card.className="investor";
+
+    card.innerHTML=`
+      <div class="person">
+        <div class="avatar">👤</div>
+        <div>
+          <h3>${escapeHTML(inv.name)} <span class="online"></span></h3>
+          <div class="phone">${escapeHTML(inv.phone)}</div>
+        </div>
+        <div class="rank">#${index+1}</div>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="label">Invested</div>
+          <div class="value">${symbol(inv.currency)}${money(inv.invested)}</div>
+        </div>
+
+        <div class="stat">
+          <div class="label">Daily %</div>
+          <div class="value">${Number(inv.percent)}%</div>
+        </div>
+
+        <div class="stat">
+          <div class="label">Current Total</div>
+          <div class="value">${symbol(inv.currency)}${money(inv.total)}</div>
+        </div>
+
+        <div class="stat">
+          <div class="label">Total Withdrawn</div>
+          <div class="value">${symbol(inv.currency)}${money(inv.withdrawn)}</div>
+        </div>
+      </div>
+
+      <div class="profit">
+        <div class="profit-title">Final Profit • Live Currency Conversion</div>
+        <div class="final-profit">
+          ${p===null ? "Rate unavailable" : "₹"+money(p)}
+        </div>
+
+        <div class="currency-row">
+          <span>🇮🇳 ${p===null ? "—" : "₹"+money(p)}</span>
+          <span>🇸🇦 ${sar==="—" ? "SAR —" : "SAR "+money(sar)}</span>
+          <span>🇦🇪 ${aed==="—" ? "AED —" : "AED "+money(aed)}</span>
+          <span>💎 ${usdt==="—" ? "USDT —" : "USDT "+money(usdt)}</span>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="view" data-view="${inv.id}">👁 View</button>
+      </div>
+
+      <div class="details" id="details-${inv.id}">
+        <div class="detail-row">
+          <span>Name</span><strong>${escapeHTML(inv.name)}</strong>
+        </div>
+        <div class="detail-row">
+          <span>Phone</span><strong>${escapeHTML(inv.phone)}</strong>
+        </div>
+        <div class="detail-row">
+          <span>Currency</span><strong>${inv.currency}</strong>
+        </div>
+        <div class="detail-row">
+          <span>Daily %</span><strong>${Number(inv.percent)}%</strong>
+        </div>
+        <button class="withdraw-btn" data-edit="${inv.id}">
+          ✏️ Edit / Withdrawal
+        </button>
+      </div>
+    `;
+
+    list.appendChild(card);
+  });
+
+  document.querySelectorAll("[data-view]").forEach(btn=>{
+    btn.onclick=()=>{
+      const id=btn.dataset.view;
+      const d=document.getElementById("details-"+id);
+      d.classList.toggle("show");
+      btn.textContent=d.classList.contains("show") ? "▲ Close" : "👁 View";
+    };
+  });
+
+  document.querySelectorAll("[data-edit]").forEach(btn=>{
+    btn.onclick=()=>openEdit(Number(btn.dataset.edit));
+  });
+}
+
+function escapeHTML(str){
+  return String(str ?? "")
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;");
+}
+
+function openNew(){
+  editingId=null;
+  document.getElementById("modalTitle").textContent="Add Investor";
+  document.getElementById("nameInput").value="";
+  document.getElementById("phoneInput").value="";
+  document.getElementById("currencyInput").value="INR";
+  document.getElementById("amountInput").value="";
+  document.getElementById("percentInput").value="4";
+  document.getElementById("totalInput").value="";
+  document.getElementById("withdrawnInput").value="0";
+  document.getElementById("withdrawBtn").style.display="none";
+  document.getElementById("deleteBtn").style.display="none";
+  modal.classList.add("show");
+}
+
+function openEdit(id){
+  const inv=investors.find(x=>x.id===id);
+  if(!inv) return;
+
+  editingId=id;
+  document.getElementById("modalTitle").textContent="Investor Details";
+  document.getElementById("nameInput").value=inv.name;
+  document.getElementById("phoneInput").value=inv.phone;
+  document.getElementById("currencyInput").value=inv.currency;
+  document.getElementById("amountInput").value=inv.invested;
+  document.getElementById("percentInput").value=inv.percent;
+  document.getElementById("totalInput").value=inv.total;
+  document.getElementById("withdrawnInput").value=inv.withdrawn;
+  document.getElementById("withdrawBtn").style.display="block";
+  document.getElementById("deleteBtn").style.display="block";
+  modal.classList.add("show");
+}
+
+document.getElementById("addBtn").onclick=openNew;
+document.getElementById("cancelBtn").onclick=()=>modal.classList.remove("show");
+
+document.getElementById("saveBtn").onclick=()=>{
+  const name=document.getElementById("nameInput").value.trim();
+  const phone=document.getElementById("phoneInput").value.trim();
+  const currency=document.getElementById("currencyInput").value;
+  const invested=parseFloat(document.getElementById("amountInput").value)||0;
+  const percent=parseFloat(document.getElementById("percentInput").value)||0;
+  const total=parseFloat(document.getElementById("totalInput").value)||0;
+  const withdrawn=parseFloat(document.getElementById("withdrawnInput").value)||0;
+
+  if(!name){
+    showToast("Enter investor name");
+    return;
+  }
+
+  if(editingId===null){
+    investors.push({
+      id:Date.now(),
+      name,phone,currency,invested,percent,total,withdrawn
+    });
+  }else{
+    const i=investors.findIndex(x=>x.id===editingId);
+    if(i>=0){
+      investors[i]={
+        ...investors[i],
+        name,phone,currency,invested,percent,total,withdrawn
+      };
+    }
+  }
+
+  saveData();
+  modal.classList.remove("show");
+  render();
+  showToast("Saved");
+};
+
+document.getElementById("withdrawBtn").onclick=()=>{
+  if(editingId===null) return;
+  const inv=investors.find(x=>x.id===editingId);
+  if(!inv) return;
+
+  const text=prompt("Withdrawal amount ("+inv.currency+"):");
+  if(text===null) return;
+
+  const amount=parseFloat(text);
+  if(!Number.isFinite(amount) || amount<=0){
+    showToast("Invalid amount");
+    return;
+  }
+
+  inv.withdrawn=Number(inv.withdrawn||0)+amount;
+  inv.total=Math.max(0,Number(inv.total||0)-amount);
+
+  saveData();
+  openEdit(editingId);
+  render();
+  showToast("Withdrawal added");
+};
+
+document.getElementById("deleteBtn").onclick=()=>{
+  if(editingId===null) return;
+  if(!confirm("Delete this investor?")) return;
+
+  investors=investors.filter(x=>x.id!==editingId);
+  saveData();
+  modal.classList.remove("show");
+  render();
+  showToast("Investor deleted");
+};
+
+modal.onclick=e=>{
+  if(e.target===modal) modal.classList.remove("show");
+};
+
+function showToast(text){
+  const t=document.getElementById("toast");
+  t.textContent=text;
+  t.classList.add("show");
+  setTimeout(()=>t.classList.remove("show"),1800);
+}
+
+const translations={
+  en:{
+    subtitle:"Investment Tracker",
+    investors:"Investors",
+    add:"＋ Add New"
+  },
+  ar:{
+    subtitle:"متابعة الاستثمارات",
+    investors:"المستثمرون",
+    add:"＋ إضافة جديد"
+  },
+  ml:{
+    subtitle:"ഇൻവെസ്റ്റ്മെന്റ് ട്രാക്കർ",
+    investors:"നിക്ഷേപകർ",
+    add:"＋ പുതിയത് ചേർക്കുക"
+  }
+};
+
+document.querySelectorAll(".lang").forEach(btn=>{
+  btn.onclick=()=>{
+    document.querySelectorAll(".lang").forEach(b=>b.classList.remove("active"));
+    btn.classList.add("active");
+
+    const t=translations[btn.dataset.lang];
+    document.getElementById("subtitle").textContent=t.subtitle;
+    document.getElementById("investorsTitle").textContent=t.investors;
+    document.getElementById("addBtn").textContent=t.add;
+
+    document.documentElement.dir=btn.dataset.lang==="ar" ? "rtl" : "ltr";
+  };
+});
+
+async function loadRates(){
+  const sarEl=document.getElementById("sarRate");
+  const aedEl=document.getElementById("aedRate");
+  const usdtEl=document.getElementById("usdtRate");
+
+  try{
+    const response=await fetch("https://api.frankfurter.app/latest?from=INR&to=USD,SAR,AED");
+    if(!response.ok) throw new Error("rate error");
+
+    const data=await response.json();
+
+    if(data.rates.SAR){
+      rates.SAR=1/data.rates.SAR;
+      sarEl.textContent="₹"+money(rates.SAR);
+      document.getElementById("sarStatus").textContent="Live rate";
+    }
+
+    if(data.rates.AED){
+      rates.AED=1/data.rates.AED;
+      aedEl.textContent="₹"+money(rates.AED);
+      document.getElementById("aedStatus").textContent="Live rate";
+    }
+
+    if(data.rates.USD){
+      rates.USDT=1/data.rates.USD;
+      usdtEl.textContent="₹"+money(rates.USDT);
+      document.getElementById("usdtStatus").textContent="USD reference";
+    }
+
+    render();
+  }catch(e){
+    sarEl.textContent="Unavailable";
+    aedEl.textContent="Unavailable";
+    usdtEl.textContent="Unavailable";
+
+    document.getElementById("sarStatus").textContent="Could not load rate";
+    document.getElementById("aedStatus").textContent="Could not load rate";
+    document.getElementById("usdtStatus").textContent="Could not load rate";
+
+    render();
+  }
+}
+
+render();
+loadRates();
+setInterval(loadRates,300000);
+</script>
 
 </body>
 </html>
